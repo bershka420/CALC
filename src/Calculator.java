@@ -11,31 +11,17 @@ public class Calculator {
         if (calculator.contains("I")||calculator.contains("V")||calculator.contains("X")){
             int x =   Convertation.convertationRomanToArab(data[0]);
             int y = Convertation.convertationRomanToArab(data[2] );
-
             int n = Calculating.calculation(x,y,data[1]);
             Convertation.convertationArabToRoman(n);
-
         }
         else {
             int x = Integer.parseInt(data[0]);
             int y =  Integer.parseInt(data[2]);
-
             System.out.println(Calculating.calculation(x,y,data[1]));
-
         }
     }
-
     static class Calculating{
         static int calculation(int numOne, int numTwo, String operation) throws Exception { int n = 0;
-
-           /* try {
-                if (!operation.equals("+")&&!operation.equals("-")&&!operation.equals("/")&&!operation.equals("*"))
-                    throw new Exception();
-            }
-            catch (Exception e){
-                System.err.println("Введен неверный знак");
-                System.exit(0);
-            }*/
             try {
                 if (numOne < 1 || numTwo < 1 || numOne > 10 || numTwo > 10) throw new Exception();
             }
@@ -66,7 +52,6 @@ public class Calculator {
                 }
                 case "*" -> n = numOne * numTwo;
             }
-
             return n;
         }
     }
@@ -87,13 +72,9 @@ public class Calculator {
                 default -> 0;
 
             };
-
-
-
         }
         static void convertationArabToRoman(int result){
             ArrayList<String> romResult = new ArrayList<>();
-
             romResult.add("I");
             romResult.add("II");
             romResult.add("III");
@@ -194,7 +175,5 @@ public class Calculator {
             romResult.add("XCVIII");
             romResult.add("XCIX");
             romResult.add("C");
-
-
             System.out.println(romResult.get(result- 1));
         }}}
